@@ -1,3 +1,5 @@
+import os
+
 import networkx as nx
 import matplotlib.pyplot as plt
 
@@ -37,6 +39,8 @@ def draw_labeled_graph(labeled_graph, graph_name, labels):
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red', font_size=7, label_pos=0.5)
 
     plt.draw()
+    if not os.path.exists("Grafi"):
+        os.mkdir("Grafi")
     plt.savefig("Grafi/" + graph_name)
     plt.show()
 
